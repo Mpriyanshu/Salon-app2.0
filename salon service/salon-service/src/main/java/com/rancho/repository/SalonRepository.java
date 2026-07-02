@@ -20,4 +20,6 @@ public interface SalonRepository extends JpaRepository<Salon,Long> {
 
     )
     List<Salon> searchSalon(@Param("keyword") String keyword);
+
+
 }
