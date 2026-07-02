@@ -19,12 +19,23 @@ public class SalonServiceImpl implements SalonService {
 
     @Override
     public Salon createSalon(SalonDTO req, UserDTO user) {
-        S
-        return null;
+        Salon salon = new Salon();
+        salon.setName(req.getName());
+        salon.setAddress(req.getAddress());
+        salon.setEmail(req.getEmail());
+        salon.setCity(req.getCity());
+        salon.setImages(req.getImages());
+        salon.setOwnerId(req.getOwnerId());
+        salon.setOpenTime(req.getOpenTime());
+        salon.setCloseTime(req.getCloseTime());
+        salon.setPhoneNumber(req.getPhoneNumber());
+        return salonRepository.save(salon);
     }
 
     @Override
     public Salon updateSalon(SalonDTO salon, UserDTO user, Long salonId) {
+
+        Salon
         return null;
     }
 
