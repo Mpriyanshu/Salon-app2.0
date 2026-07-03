@@ -14,7 +14,7 @@ public interface SalonService {
 
     List<Salon> getAllSalons();
 
-    Salon getSalonById(Long salonId);
+    Salon getSalonById(Long salonId) throws Exception;
 
     Salon getSalonByOwnerId(Long ownerId);
 

@@ -53,21 +53,25 @@ public class SalonServiceImpl implements SalonService {
 
     @Override
     public List<Salon> getAllSalons() {
-        return List.of();
+        return salonRepository.findAll();
     }
 
     @Override
-    public Salon getSalonById(Long salonId) {
-        return null;
+    public Salon getSalonById(Long salonId) throws Exception {
+        Salon salon =  salonRepository.findById(salonId).orElse(null);
+        if(salon==null){
+            throw new Exception("salon not exist");
+        }
+        return salon;
     }
 
     @Override
     public Salon getSalonByOwnerId(Long ownerId) {
-        return null;
+        return salonRepository.findByOwnerId(ownerId);
     }
 
     @Override
     public List<Salon> searchSalonByCity(String city) {
-        return List.of();
+        return salonRepository.searchSalon(city);
     }
 }
