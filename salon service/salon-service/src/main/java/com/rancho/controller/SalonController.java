@@ -21,7 +21,7 @@ public class SalonController {
     // http://localhost:5002/api/salons->  api for this method
     @PostMapping
     public ResponseEntity<SalonDTO> createSalon(@RequestBody SalonDTO salonDTO){
-        UserDTO userDTO = new UserDTO();
+        UserDTO userDTO=new UserDTO();
         userDTO.setId(1L);
         Salon salon=salonService.createSalon(salonDTO, userDTO);
         SalonDTO salonDTO1= SalonMapper.mapToDTO(salon);

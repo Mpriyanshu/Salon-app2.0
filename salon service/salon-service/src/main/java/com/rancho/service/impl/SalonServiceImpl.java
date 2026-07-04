@@ -15,7 +15,7 @@ import java.util.List;
 public class SalonServiceImpl implements SalonService {
 
 
-    private SalonRepository salonRepository;
+    private final SalonRepository salonRepository;
 
     @Override
     public Salon createSalon(SalonDTO req, UserDTO user) {
