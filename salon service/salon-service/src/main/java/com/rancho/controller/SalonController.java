@@ -28,12 +28,15 @@ public class SalonController {
         return ResponseEntity.ok(salonDTO1);
     }
     // http://localhost:5002/api/salons/2->  api for this method
-    @PatchMapping("/{id}")
+    @PatchMapping("/{salonId}")
     public ResponseEntity<SalonDTO> updateSalon(
-            @PathVariable("id") Long salonId,
+            @PathVariable Long salonId,
             @RequestBody SalonDTO salonDTO) throws Exception {
         UserDTO userDTO = new UserDTO();
         userDTO.setId(1L);
+
+        System.out.println("-------------"+salonId);
+
         Salon salon=salonService.updateSalon(salonDTO, userDTO, salonId);
         SalonDTO salonDTO1= SalonMapper.mapToDTO(salon);
         return ResponseEntity.ok(salonDTO1);
