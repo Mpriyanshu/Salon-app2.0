@@ -51,6 +51,8 @@ public class SalonServiceImpl implements SalonService {
             existingSalon.setOwnerId(user.getId());
             existingSalon.setPhoneNumber(salon.getPhoneNumber());
 
+
+
             return salonRepository.save(existingSalon);
 
         }
