@@ -5,7 +5,7 @@ import com.rancho.modal.Category;
 
 import java.util.Set;
 
-public interface CategotyService {
+public interface CategoryService {
 
     Category saveCategory(Category category, SalonDTO salonDTO);
     Set<Category> getAllCategoryBySalon(Long id);
