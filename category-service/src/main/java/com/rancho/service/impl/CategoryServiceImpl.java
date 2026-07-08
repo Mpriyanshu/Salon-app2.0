@@ -45,7 +45,7 @@ public class CategoryServiceImpl implements CategoryService {
     public void deleteCategoryById(Long id, Long salonId) throws Exception {
         Category category=getCategoryById(id);
         if(category.getSalonId().equals(salonId)){
-            throw new Exception("you don't have permission to delete this category")
+            throw new Exception("you don't have permission to delete this category");
         }
         categoryRepository.deleteById(id);
 
