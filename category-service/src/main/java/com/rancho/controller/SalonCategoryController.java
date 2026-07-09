@@ -14,7 +14,7 @@ import java.util.Set;
 @RequestMapping("/api/categories/salon-owner")
 public class SalonCategoryController {
 
-    private CategoryService categoryService;
+    private final CategoryService categoryService;
 
     @PostMapping()
     public ResponseEntity<Category> createCategory(@RequestBody Category category) {
@@ -27,7 +27,7 @@ public class SalonCategoryController {
         return ResponseEntity.ok(savedCategory);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCategory(@PathVariable Long id) throws Exception {
 
         SalonDTO salonDTO=new SalonDTO();

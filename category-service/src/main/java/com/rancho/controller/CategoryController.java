@@ -17,7 +17,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class CategoryController {
 
-    private CategoryService categoryService;
+    private final CategoryService categoryService;
 
     @GetMapping("/salon/{id}")
     public ResponseEntity<Set<Category>> getCategoriesBySalon(@PathVariable Long id) {
