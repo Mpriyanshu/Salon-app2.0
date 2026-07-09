@@ -48,7 +48,7 @@ public class CategoryServiceImpl implements CategoryService {
             throw new Exception("you don't have permission to delete this category");
         }
         categoryRepository.deleteById(id);
-
+//-------end ---//
 
     }
 }
