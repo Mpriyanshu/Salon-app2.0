@@ -1,8 +1,10 @@
 package com.rancho.modal;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 public class ServiceOffering {
 
     @Id
