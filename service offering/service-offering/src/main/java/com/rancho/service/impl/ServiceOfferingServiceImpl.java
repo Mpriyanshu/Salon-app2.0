@@ -27,11 +27,20 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
         serviceOffering.setCategoryId(categoryDTO.getId());
         serviceOffering.setPrice(serviceDTO.getPrice());
         serviceOffering.setDuration(serviceDTO.getDuration());
-        return null;
+        return serviceOfferingRepository.save(serviceOffering);
     }
 
     @Override
-    public ServiceOffering updateOffering(Long serviceId, ServiceOffering service) {
+    public ServiceOffering updateOffering(Long serviceId, ServiceOffering service) throws Exception {
+        ServiceOffering serviceOffering=serviceOfferingRepository.findById(serviceId).orElse(null);
+        if(serviceOffering==null){
+            throw new Exception("service not exist with id"+serviceId);
+        }
+        serviceOffering.setImage(service.getImage());
+        serviceOffering.setName(service.getName();
+        serviceOffering.setDescription(service.getDescription());
+        serviceOffering.setPrice(service.getPrice());
+        serviceOffering.setDuration(service.getDuration());
         return null;
     }
 
