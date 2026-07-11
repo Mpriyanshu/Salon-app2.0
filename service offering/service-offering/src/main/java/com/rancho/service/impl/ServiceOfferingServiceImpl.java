@@ -4,13 +4,18 @@ import com.rancho.dto.CategoryDTO;
 import com.rancho.dto.SalonDTO;
 import com.rancho.dto.ServiceDTO;
 import com.rancho.modal.ServiceOffering;
+import com.rancho.repository.ServiceOfferingRepository;
 import com.rancho.service.ServiceOfferingService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@RequiredArgsConstructor
 public class ServiceOfferingServiceImpl implements ServiceOfferingService {
+
+    private final ServiceOfferingRepository serviceOfferingRepository;
 
     @Override
     public ServiceOffering createService(SalonDTO salonDTO, ServiceDTO serviceDTO, CategoryDTO CategoryDTO) {
