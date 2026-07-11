@@ -37,16 +37,19 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
             throw new Exception("service not exist with id"+serviceId);
         }
         serviceOffering.setImage(service.getImage());
-        serviceOffering.setName(service.getName();
+        serviceOffering.setName(service.getName());
         serviceOffering.setDescription(service.getDescription());
         serviceOffering.setPrice(service.getPrice());
         serviceOffering.setDuration(service.getDuration());
-        return null;
+        return serviceOfferingRepository.save(serviceOffering);
     }
 
     @Override
     public Set<ServiceOffering> getAllServiceBySalonId(Long salonId, Long catyegoryId) {
-        return Set.of();
+        Set<ServiceOffering> services=serviceOfferingRepository.findBySalonId(salonId);
+        if (catyegoryId!=null){
+            services=
+        }
     }
 
     @Override
