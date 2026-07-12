@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -48,7 +49,8 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
     public Set<ServiceOffering> getAllServiceBySalonId(Long salonId, Long catyegoryId) {
         Set<ServiceOffering> services=serviceOfferingRepository.findBySalonId(salonId);
         if (catyegoryId!=null){
-            services=
+            services=services.stream().filter((service)->service.getCategoryId() !=null &&
+                    service.getCategoryId()==catyegoryId).collect(Collectors.toSet());
         }
     }
 
