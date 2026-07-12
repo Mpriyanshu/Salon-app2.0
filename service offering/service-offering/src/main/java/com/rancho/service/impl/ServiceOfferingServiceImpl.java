@@ -52,6 +52,7 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
             services=services.stream().filter((service)->service.getCategoryId() !=null &&
                     service.getCategoryId()==catyegoryId).collect(Collectors.toSet());
         }
+        return services;
     }
 
     @Override
