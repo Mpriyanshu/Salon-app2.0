@@ -9,6 +9,8 @@ import com.rancho.service.ServiceOfferingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -57,6 +59,7 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
 
     @Override
     public Set<ServiceOffering> getServicesById(Set<Long> ids) {
-        return Set.of();
+        List<ServiceOffering> services=serviceOfferingRepository.findAllById(ids);
+        return new HashSet<>(services);
     }
 }
