@@ -71,4 +71,12 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
         }
         return serviceOffering;
     }
+
+
+
+    @Override
+    public Set<ServiceOffering> getServicesByIds(Set<Long> ids) {
+        List<ServiceOffering> services= ServiceOfferingRepository.findAllByIds;
+        return new HashSet<>(services);
+    }
 }

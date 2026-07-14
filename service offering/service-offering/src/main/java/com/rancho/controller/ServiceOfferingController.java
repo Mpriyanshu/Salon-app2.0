@@ -28,6 +28,13 @@ public class ServiceOfferingController {
 
     }
 
+    @GetMapping("/lis/{ids}")
+    public ResponseEntity<Set<ServiceOffering>> getServiceByIds(@PathVariable ){
+        Set<ServiceOffering> serviceOfferings=serviceOfferingService.getServicesByIds(ids);
+        return ResponseEntity.ok(serviceOfferings);
+
+    }
+
 
 
 }
