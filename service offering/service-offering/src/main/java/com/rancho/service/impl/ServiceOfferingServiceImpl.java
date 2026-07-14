@@ -76,7 +76,7 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
 
     @Override
     public Set<ServiceOffering> getServicesByIds(Set<Long> ids) {
-        List<ServiceOffering> services= ServiceOfferingRepository.findAllByIds;
+        List<ServiceOffering> services= serviceOfferingRepository.findAllById(ids) ;
         return new HashSet<>(services);
     }
 }

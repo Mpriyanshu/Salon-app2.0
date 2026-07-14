@@ -8,5 +8,6 @@ import java.util.Set;
 
 public interface ServiceOfferingRepository extends JpaRepository<ServiceOffering,Long> {
 
+
     Set<ServiceOffering> findBySalonId(Long salonId);
 }
