@@ -2,6 +2,7 @@ package com.rancho.controller;
 
 import com.rancho.modal.ServiceOffering;
 import com.rancho.service.ServiceOfferingService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,9 +10,10 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/api/service-offering")
+@RequiredArgsConstructor
 public class ServiceOfferingController {
 
-    private ServiceOfferingService serviceOfferingService;
+    private final ServiceOfferingService serviceOfferingService;
 
     @GetMapping("/salon/{salonId}")
     public ResponseEntity<Set<ServiceOffering>> getServiceBySalonId(@PathVariable Long salonId,
@@ -28,7 +30,7 @@ public class ServiceOfferingController {
 
     }
 
-    @GetMapping("/lis/{ids}")
+    @GetMapping("/list/{ids}")
     public ResponseEntity<Set<ServiceOffering>> getServiceByIds(@PathVariable Set<Long> ids ){
         Set<ServiceOffering> serviceOfferings=serviceOfferingService.getServicesByIds(ids);
         return ResponseEntity.ok(serviceOfferings);
