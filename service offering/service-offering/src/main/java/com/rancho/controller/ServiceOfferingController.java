@@ -13,12 +13,21 @@ public class ServiceOfferingController {
 
     private ServiceOfferingService serviceOfferingService;
 
-    @GetMapping("/salon/{}salonId")
+    @GetMapping("/salon/{salonId}")
     public ResponseEntity<Set<ServiceOffering>> getServiceBySalonId(@PathVariable Long salonId,
                                                                     @RequestParam(required = false) Long categoryId){
         Set<ServiceOffering> serviceOfferings=serviceOfferingService.getAllServiceBySalonId(salonId, categoryId);
         return ResponseEntity.ok(serviceOfferings);
 
     }
+
+    @GetMapping("{id}")
+    public ResponseEntity<ServiceOffering> getServiceById(@PathVariable Long id) throws Exception {
+        ServiceOffering serviceOffering=serviceOfferingService.getServiceById(id);
+        return ResponseEntity.ok(serviceOffering);
+
+    }
+
+
 
 }
