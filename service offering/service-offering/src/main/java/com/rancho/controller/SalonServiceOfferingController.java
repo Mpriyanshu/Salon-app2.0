@@ -19,14 +19,14 @@ public class SalonServiceOfferingController {
     private final ServiceOfferingService serviceOfferingService;
 
     @PostMapping
-    public ResponseEntity<Set<ServiceOffering>> createService(@RequestBody ServiceDTO serviceDTO){
+    public ResponseEntity<ServiceOffering> createService(@RequestBody ServiceDTO serviceDTO){
         SalonDTO salonDTO=new SalonDTO();
         salonDTO.setId(1L);
 
         CategoryDTO categoryDTO=new CategoryDTO();
         categoryDTO.setId(serviceDTO.getCategoryId());
 
-        Set<ServiceOffering> serviceOfferings=serviceOfferingService.createService();
+        ServiceOffering serviceOfferings=serviceOfferingService.createService(salonDTO, serviceDTO, categoryDTO);
         return ResponseEntity.ok(serviceOfferings);
 
 
