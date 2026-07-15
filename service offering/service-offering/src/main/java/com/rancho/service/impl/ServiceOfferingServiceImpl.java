@@ -79,4 +79,9 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
         List<ServiceOffering> services= serviceOfferingRepository.findAllById(ids) ;
         return new HashSet<>(services);
     }
+
+    @Override
+    public ServiceOffering updateService(Long id, ServiceOffering serviceOffering) {
+        return null;
+    }
 }
