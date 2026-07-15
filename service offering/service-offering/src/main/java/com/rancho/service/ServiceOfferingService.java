@@ -24,4 +24,8 @@ public interface ServiceOfferingService {
 
     Set<ServiceOffering> getServicesByIds(Set<Long> ids);
 
+
+
+
+    ServiceOffering updateService(Long id, ServiceOffering serviceOffering);
 }
