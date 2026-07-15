@@ -24,7 +24,7 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
     public ServiceOffering createService(SalonDTO salonDto, ServiceDTO serviceDTO, CategoryDTO categoryDTO) {
         ServiceOffering serviceOffering = new ServiceOffering();
         serviceOffering.setImage(serviceDTO.getImage());
-        serviceOffering.setSalopnId(salonDto.getId());
+        serviceOffering.setSalonId(salonDto.getId());
         serviceOffering.setName(serviceDTO.getName());
         serviceOffering.setDescription(serviceDTO.getDescription());
         serviceOffering.setCategoryId(categoryDTO.getId());

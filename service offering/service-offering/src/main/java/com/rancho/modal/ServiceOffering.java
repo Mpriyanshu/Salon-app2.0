@@ -24,7 +24,7 @@ public class ServiceOffering {
     private int duration;
 
     @Column(nullable = false)
-    private Long salopnId;
+    private Long salonId;
 
     @Column(nullable = false)
     private Long categoryId;
