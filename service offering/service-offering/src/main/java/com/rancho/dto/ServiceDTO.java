@@ -19,7 +19,7 @@ public class ServiceDTO {
 
     private int duration;
 
-    private Long salopnId;
+    private Long salonId;
 
     private Long category;
 
