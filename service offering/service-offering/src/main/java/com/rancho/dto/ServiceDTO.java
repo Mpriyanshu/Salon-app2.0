@@ -21,7 +21,7 @@ public class ServiceDTO {
 
     private Long salopnId;
 
-    private Long categoryId;
+    private Long category;
 
     private String image;
 }
