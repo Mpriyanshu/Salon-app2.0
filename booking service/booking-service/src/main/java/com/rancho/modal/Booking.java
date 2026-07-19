@@ -1,5 +1,6 @@
 package com.rancho.modal;
 
+import com.rancho.domain.BookingStatus;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -23,7 +24,7 @@ public class Booking {
     @ElementCollection
     private Set<Long> ServiceIds;
 
-    private BookingStatus status;
+    private BookingStatus status=BookingStatus.PENDING;
 
     private int totalServices;
 
