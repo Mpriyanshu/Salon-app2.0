@@ -9,17 +9,24 @@ import com.rancho.modal.Booking;
 import com.rancho.modal.SalonReport;
 import com.rancho.repository.BookingRepository;
 import com.rancho.service.BookingService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
+@Service
+@RequiredArgsConstructor
 public class BookingServiceImpl implements BookingService {
 
-    private BookingRepository bookingRepository;
+    private final BookingRepository bookingRepository;
 
     @Override
-    public Booking createBooking(BookingRequest booking, UserDTO ser, SalonDTO salonDTO, Set<ServiceDTO> serviceDTOSet) {
+    public Booking createBooking(BookingRequest booking,
+                                 UserDTO user,
+                                 SalonDTO salon,
+                                 Set<ServiceDTO> serviceDTOSet) {
         return null;
     }
 
