@@ -7,6 +7,7 @@ import com.rancho.dto.ServiceDTO;
 import com.rancho.dto.UserDTO;
 import com.rancho.modal.Booking;
 import com.rancho.modal.SalonReport;
+import com.rancho.repository.BookingRepository;
 import com.rancho.service.BookingService;
 
 import java.time.LocalDate;
@@ -15,6 +16,7 @@ import java.util.Set;
 
 public class BookingServiceImpl implements BookingService {
 
+    private BookingRepository bookingRepository;
 
     @Override
     public Booking createBooking(BookingRequest booking, UserDTO ser, SalonDTO salonDTO, Set<ServiceDTO> serviceDTOSet) {
