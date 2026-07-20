@@ -6,6 +6,7 @@ import com.rancho.dto.SalonDTO;
 import com.rancho.dto.ServiceDTO;
 import com.rancho.dto.UserDTO;
 import com.rancho.modal.Booking;
+import com.rancho.modal.SalonReport;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -23,4 +24,5 @@ public interface BookingService {
      Booking getBooKingById(Long Id);
      Booking UpdateBooking(Long bookingId, BookingStatus status);
      List<Booking> getBookingsByDate(LocalDate date, Long salonId);
+     SalonReport getSalonReport(Long salonId);
 }
