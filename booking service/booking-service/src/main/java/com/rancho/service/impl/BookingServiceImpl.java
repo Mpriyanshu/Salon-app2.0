@@ -40,7 +40,7 @@ public class BookingServiceImpl implements BookingService {
     public  Boolean isTimeSlotAvailable(SalonDTO salonDTO,
                                         LocalDateTime bookingStartTime,
                                         LocalDateTime bookingEndTime) throws Exception {
-            List<Booking> existingBookings=getBookingBySalon(salonDTO.getId())
+            List<Booking> existingBookings=getBookingBySalon(salonDTO.getId());
         LocalDateTime salonOpenTime= salonDTO.getOpenTime().atDate(bookingStartTime.toLocalDate());
         LocalDateTime salonCloseTime= salonDTO.getCloseTime().atDate(bookingStartTime.toLocalDate());
         if(bookingStartTime.isBefore(salonOpenTime) || bookingEndTime.isAfter(salonCloseTime)){
