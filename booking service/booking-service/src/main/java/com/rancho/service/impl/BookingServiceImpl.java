@@ -47,6 +47,11 @@ public class BookingServiceImpl implements BookingService {
             throw new Exception("Booking time must be within salon's working hours");
         }
 
+        for(Booking existingBooking: existingBookings){
+            LocalDateTime existingBookingStartTime=existingBooking.getStartTime();
+            LocalDateTime existingBookingEndTime=existingBooking.getEndTime();
+        }
+
         return  true;
     }
 
