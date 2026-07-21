@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
@@ -27,7 +28,12 @@ public class BookingServiceImpl implements BookingService {
                                  UserDTO user,
                                  SalonDTO salon,
                                  Set<ServiceDTO> serviceDTOSet) {
+        int totalDuration = serviceDTOSet.stream()
+                            .mapToInt(ServiceDTO::getDuration)
+                            .sum();
 
+        LocalDateTime bookingStartTime=booking.getStartTime();
+        LocalDateTime bookingEndTime=bookingStartTime.plusMinutes(totalDuration);
         return null;
     }
 
