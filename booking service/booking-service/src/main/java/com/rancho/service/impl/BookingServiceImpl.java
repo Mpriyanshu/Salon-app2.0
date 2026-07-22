@@ -58,7 +58,7 @@ public class BookingServiceImpl implements BookingService {
 
             }
 
-            if()
+            if(bookingStartTime)
         }
 
         return  true;
