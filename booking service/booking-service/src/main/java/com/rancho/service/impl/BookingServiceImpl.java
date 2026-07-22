@@ -51,7 +51,7 @@ public class BookingServiceImpl implements BookingService {
             LocalDateTime existingBookingStartTime=existingBooking.getStartTime();
             LocalDateTime existingBookingEndTime=existingBooking.getEndTime();
 
-            if()
+            if(bookingStartTime.isBefore(existingBookingEndTime))
         }
 
         return  true;
