@@ -54,9 +54,11 @@ public class BookingServiceImpl implements BookingService {
             if(bookingStartTime.isBefore(existingBookingEndTime)
                     && bookingEndTime.isAfter(existingBookingStartTime)){
 
-                throw new Exception("")
+                throw new Exception("slot not available, choose different time.");
 
             }
+
+            if()
         }
 
         return  true;
