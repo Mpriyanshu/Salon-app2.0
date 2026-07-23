@@ -106,12 +106,16 @@ public class BookingServiceImpl implements BookingService {
         if(booking==null){
             throw  new Exception("booking nor found");
         }
-        return null;
+        return booking;
     }
 
     @Override
-    public Booking UpdateBooking(Long bookingId, BookingStatus status) {
-        return null;
+    public Booking UpdateBooking(Long bookingId, BookingStatus status) throws Exception {
+        Booking booking=getBooKingById(bookingId);
+
+        booking.setStatus(status);
+
+        return bookingRepository.save(booking);
     }
 
     @Override
