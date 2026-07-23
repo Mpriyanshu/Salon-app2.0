@@ -57,7 +57,7 @@ public class BookingServiceImpl implements BookingService {
         newBooking.setEndTime(bookingEndTime);
         newBooking.setTotalPrice(totalPrice);
 
-        return null;
+        return bookingRepository.save(newBooking);
     }
 
     public  Boolean isTimeSlotAvailable(SalonDTO salonDTO,
