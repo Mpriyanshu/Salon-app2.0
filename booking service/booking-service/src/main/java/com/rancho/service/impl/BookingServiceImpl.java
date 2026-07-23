@@ -27,13 +27,14 @@ public class BookingServiceImpl implements BookingService {
     public Booking createBooking(BookingRequest booking,
                                  UserDTO user,
                                  SalonDTO salon,
-                                 Set<ServiceDTO> serviceDTOSet) {
+                                 Set<ServiceDTO> serviceDTOSet) throws Exception {
         int totalDuration = serviceDTOSet.stream()
                             .mapToInt(ServiceDTO::getDuration)
                             .sum();
 
         LocalDateTime bookingStartTime=booking.getStartTime();
         LocalDateTime bookingEndTime=bookingStartTime.plusMinutes(totalDuration);
+        Boolean isSlotAvailable=isTimeSlotAvailable(salon,bookingStartTime,bookingEndTime);
         return null;
     }
 
