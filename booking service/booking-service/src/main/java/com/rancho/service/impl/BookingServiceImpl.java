@@ -52,6 +52,10 @@ public class BookingServiceImpl implements BookingService {
         newBooking.setCustomerId(user.getId());
         newBooking.setSalonId(salon.getId());
         newBooking.setServiceIds(idList);
+        newBooking.setStatus(BookingStatus.PENDING);
+        newBooking.setStartTime(bookingStartTime);
+        newBooking.setEndTime(bookingEndTime);
+        newBooking.setTotalPrice(totalPrice);
 
         return null;
     }
