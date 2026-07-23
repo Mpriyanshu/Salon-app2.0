@@ -120,7 +120,18 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public List<Booking> getBookingsByDate(LocalDate date, Long salonId) {
+        List<Booking> allBookings=getBookingBySalon(salonId);
+        if(date==null){
+            return allBookings;
+        }
+
+        allBookings.stream()
+                .filter(booking -> isSameDate(booking.getStartTime(),date))
+
         return List.of();
+    }
+
+    private boolean isSameDate(LocalDateTime startTime, LocalDate date) {
     }
 
     @Override
