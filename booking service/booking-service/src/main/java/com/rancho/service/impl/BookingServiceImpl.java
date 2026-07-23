@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -40,6 +41,17 @@ public class BookingServiceImpl implements BookingService {
         int totalPrice=serviceDTOSet.stream()
                 .mapToInt(ServiceDTO::getPrice)
                 .sum();
+
+
+        //Return id list from serviceDTO
+        Set<Long> idList=serviceDTOSet.stream()
+                .map(ServiceDTO::getId)
+                .collect(Collectors.toSet());
+
+        Booking newBooking=new Booking();
+        newBooking.setCustomerId(user.getId());
+        newBooking.setSalonId(salon.getId());
+        newBooking.setServiceIds(idList);
 
         return null;
     }
