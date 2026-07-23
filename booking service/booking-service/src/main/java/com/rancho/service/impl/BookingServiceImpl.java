@@ -58,7 +58,8 @@ public class BookingServiceImpl implements BookingService {
 
             }
 
-            if(bookingStartTime)
+            if(bookingStartTime.isEqual(existingBookingStartTime)
+                    || bookingEndTime.isEqual(existingBookingEndTime));
         }
 
         return  true;
