@@ -130,10 +130,12 @@ public class BookingServiceImpl implements BookingService {
                         isSameDate(booking.getEndTime(),date)).collect(Collectors.toList());
 
 
-        return List.of();
+
     }
 
     private boolean isSameDate(LocalDateTime startTime, LocalDate date) {
+
+
     }
 
     @Override
