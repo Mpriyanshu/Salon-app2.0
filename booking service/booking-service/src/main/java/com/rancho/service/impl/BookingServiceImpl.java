@@ -127,7 +127,8 @@ public class BookingServiceImpl implements BookingService {
 
         return allBookings.stream()
                 .filter(booking -> isSameDate(booking.getStartTime(),date)  ||
-                        isSameDate(booking.getEndTime(),date)).collect(Collectors.toList());
+                        isSameDate(booking.getEndTime(),date))
+                .collect(Collectors.toList());
 
 
 
@@ -140,6 +141,7 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public SalonReport getSalonReport(Long salonId) {
+        List<Booking>
         return null;
     }
 }
