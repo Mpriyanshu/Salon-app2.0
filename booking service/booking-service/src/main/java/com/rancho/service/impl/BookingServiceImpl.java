@@ -126,7 +126,9 @@ public class BookingServiceImpl implements BookingService {
         }
 
         allBookings.stream()
-                .filter(booking -> isSameDate(booking.getStartTime(),date))
+                .filter(booking -> isSameDate(booking.getStartTime(),date)  ||
+                        is)
+
 
         return List.of();
     }
