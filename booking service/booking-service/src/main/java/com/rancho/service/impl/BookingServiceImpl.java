@@ -133,8 +133,8 @@ public class BookingServiceImpl implements BookingService {
 
     }
 
-    private boolean isSameDate(LocalDateTime startTime, LocalDate date) {
-
+    private boolean isSameDate(LocalDateTime dateTime, LocalDate date) {
+        return dateTime.toLocalDate().isEqual(date);
 
     }
 
