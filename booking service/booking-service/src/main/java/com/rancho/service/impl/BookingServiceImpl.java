@@ -141,7 +141,6 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public SalonReport getSalonReport(Long salonId) {
-        List<Booking>
+        List<Booking> bookings=getBookingBySalon(salonId);
+
         return null;
-    }
-}
