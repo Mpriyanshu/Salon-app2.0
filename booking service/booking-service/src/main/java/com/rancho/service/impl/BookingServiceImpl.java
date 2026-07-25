@@ -143,4 +143,5 @@ public class BookingServiceImpl implements BookingService {
     public SalonReport getSalonReport(Long salonId) {
         List<Booking> bookings=getBookingBySalon(salonId);
 
+        Double totalEarnings=bookings.stream()
         return null;
