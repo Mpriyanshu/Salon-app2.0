@@ -1,6 +1,8 @@
 package com.rancho.controller;
 
 import com.rancho.dto.BookingRequest;
+import com.rancho.dto.SalonDTO;
+import com.rancho.dto.UserDTO;
 import com.rancho.modal.Booking;
 import com.rancho.service.BookingService;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +24,11 @@ public class BookingController {
             @RequestBody BookingRequest bookingRequest
             ){
 
+        UserDTO user=new UserDTO();
+        user.setId(1L);
+
+        SalonDTO salon=new SalonDTO();
+        salon.setId(salonId);
 
         return null;
 
