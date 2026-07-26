@@ -53,7 +53,7 @@ public class BookingController {
 
     }
 
-    public ResponseEntity<Set<Booking>> getBookingsByCustomer(
+    public ResponseEntity<Set<BookingDTO>> getBookingsByCustomer(
 
     ){
 

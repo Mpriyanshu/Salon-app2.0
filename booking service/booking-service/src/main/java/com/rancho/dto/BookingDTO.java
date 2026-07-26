@@ -1,18 +1,15 @@
-package com.rancho.modal;
+package com.rancho.dto;
 
 import com.rancho.domain.BookingStatus;
-import jakarta.persistence.*;
+import jakarta.persistence.ElementCollection;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.Set;
 
-@Entity
 @Data
-public class Booking {
+public class BookingDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private Long salonId;
@@ -23,12 +20,9 @@ public class Booking {
 
     private  LocalDateTime endTime;
 
-    @ElementCollection
     private Set<Long> ServiceIds;
 
     private BookingStatus status=BookingStatus.PENDING;
-
-    private int totalPrice;
 
 
 }
