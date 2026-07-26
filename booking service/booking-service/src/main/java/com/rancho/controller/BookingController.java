@@ -2,6 +2,7 @@ package com.rancho.controller;
 
 import com.rancho.dto.BookingRequest;
 import com.rancho.dto.SalonDTO;
+import com.rancho.dto.ServiceDTO;
 import com.rancho.dto.UserDTO;
 import com.rancho.modal.Booking;
 import com.rancho.service.BookingService;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/bookings")
@@ -29,6 +33,13 @@ public class BookingController {
 
         SalonDTO salon=new SalonDTO();
         salon.setId(salonId);
+
+        Set<ServiceDTO> serviceDTOSet=new HashSet<>();
+
+        ServiceDTO serviceDTO=new ServiceDTO();
+        serviceDTO.setId(1L);
+
+        serviceDTOSet.add(serviceDTO);
 
         return null;
 
