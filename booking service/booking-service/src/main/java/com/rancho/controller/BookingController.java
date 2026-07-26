@@ -26,7 +26,7 @@ public class BookingController {
     public ResponseEntity<Booking> createBooking(
             @RequestParam Long salonId,
             @RequestBody BookingRequest bookingRequest
-            ){
+            ) throws Exception {
 
         UserDTO user=new UserDTO();
         user.setId(1L);
@@ -45,7 +45,11 @@ public class BookingController {
 
         serviceDTOSet.add(serviceDTO);
 
-        return null;
+        Booking booking=bookingService.createBooking(bookingRequest,
+                user,
+                salon,serviceDTOSet);
+
+        return ResponseEntity.ok(booking);
 
 
     }
