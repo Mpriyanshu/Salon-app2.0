@@ -153,7 +153,9 @@ public class BookingServiceImpl implements BookingService {
                 .filter(booking -> booking.getStatus().equals(BookingStatus.CANCELLED))
                 .collect(Collectors.toList());
 
-        Double  totalRefund=cancelledBookings
+        Double  totalRefund=cancelledBookings.stream()
+                .mapToDouble(Booking::getTotalPrice)
+                .sum();
 
         return null;
 
