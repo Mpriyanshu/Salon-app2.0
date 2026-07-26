@@ -160,9 +160,10 @@ public class BookingServiceImpl implements BookingService {
         SalonReport report=new SalonReport();
         report.setSalonId(salonId);
         report.setCancelledBookings(cancelledBookings.size());
-        report.setTotalBookings(totalBooking);
+        report.setTotalBookings(totalEarnings);
         report.setTotalEarnings(totalEarnings);
         report.setTotalRefund(totalRefund);
+        report.setTotalBookings(totalBooking);
 
         return report;
 
