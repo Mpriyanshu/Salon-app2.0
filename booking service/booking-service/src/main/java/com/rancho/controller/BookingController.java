@@ -38,6 +38,10 @@ public class BookingController {
 
         ServiceDTO serviceDTO=new ServiceDTO();
         serviceDTO.setId(1L);
+        serviceDTO.setPrice(399);
+        serviceDTO.setDuration(45);
+        serviceDTO.setName("Hair cut for men");
+
 
         serviceDTOSet.add(serviceDTO);
 
