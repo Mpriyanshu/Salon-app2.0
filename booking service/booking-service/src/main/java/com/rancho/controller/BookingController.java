@@ -8,12 +8,10 @@ import com.rancho.modal.Booking;
 import com.rancho.service.BookingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -23,6 +21,7 @@ public class BookingController {
 
     private final BookingService bookingService;
 
+    @PostMapping
     public ResponseEntity<Booking> createBooking(
             @RequestParam Long salonId,
             @RequestBody BookingRequest bookingRequest
@@ -52,6 +51,13 @@ public class BookingController {
         return ResponseEntity.ok(booking);
 
 
+    }
+
+    public ResponseEntity<Set<Booking>> getBookingsByCustomer(
+
+    ){
+
+        List<Booking> bookings=bookingService.getBookingsByCustomer(1L);
     }
 
 }
