@@ -1,6 +1,7 @@
 package com.rancho.controller;
 
 import com.rancho.dto.*;
+import com.rancho.mapper.BookingMapper;
 import com.rancho.modal.Booking;
 import com.rancho.service.BookingService;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/bookings")
@@ -61,7 +63,9 @@ public class BookingController {
 
     private Set<BookingDTO> getBookingDTOs(List<Booking> bookings){
         return bookings.stream()
-                .map(booking -> )
+                .map(booking -> {
+                    return BookingMapper.toDTO(booking);
+                }).collect(Collectors.toSet());;
     }
 
 }
