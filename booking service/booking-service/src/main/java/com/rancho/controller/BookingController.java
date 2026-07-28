@@ -1,9 +1,6 @@
 package com.rancho.controller;
 
-import com.rancho.dto.BookingRequest;
-import com.rancho.dto.SalonDTO;
-import com.rancho.dto.ServiceDTO;
-import com.rancho.dto.UserDTO;
+import com.rancho.dto.*;
 import com.rancho.modal.Booking;
 import com.rancho.service.BookingService;
 import lombok.RequiredArgsConstructor;
@@ -58,6 +55,12 @@ public class BookingController {
     ){
 
         List<Booking> bookings=bookingService.getBookingsByCustomer(1L);
+
+        return null;
+    }
+
+    private Set<BookingDTO> getBookingDTOs(List<Booking> booking){
+
     }
 
 }
