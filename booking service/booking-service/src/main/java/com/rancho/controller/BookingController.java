@@ -59,8 +59,9 @@ public class BookingController {
         return null;
     }
 
-    private Set<BookingDTO> getBookingDTOs(List<Booking> booking){
-
+    private Set<BookingDTO> getBookingDTOs(List<Booking> bookings){
+        return bookings.stream()
+                .map(booking -> )
     }
 
 }
