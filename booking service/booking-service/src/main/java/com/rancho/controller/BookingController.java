@@ -52,6 +52,7 @@ public class BookingController {
 
     }
 
+    @GetMapping("/customer")
     public ResponseEntity<Set<BookingDTO>> getBookingsByCustomer(
 
     ){
@@ -60,6 +61,17 @@ public class BookingController {
 
         return ResponseEntity.ok(getBookingDTOs(bookings));
     }
+
+    @GetMapping("/salon")
+    public ResponseEntity<Set<BookingDTO>> getBookingsBySalon(
+
+    ){
+
+        List<Booking> bookings=bookingService.getBookingBySalon(1L);
+
+        return ResponseEntity.ok(getBookingDTOs(bookings));
+    }
+
 
     private Set<BookingDTO> getBookingDTOs(List<Booking> bookings){
         return bookings.stream()
