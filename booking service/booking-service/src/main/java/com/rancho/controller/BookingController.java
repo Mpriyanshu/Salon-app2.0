@@ -1,5 +1,6 @@
 package com.rancho.controller;
 
+import com.rancho.domain.BookingStatus;
 import com.rancho.dto.*;
 import com.rancho.mapper.BookingMapper;
 import com.rancho.modal.Booking;
@@ -88,6 +89,18 @@ public class BookingController {
     ) throws Exception {
 
         Booking booking=bookingService.getBooKingById(bookingId);
+
+        return ResponseEntity.ok(BookingMapper.toDTO(booking));
+    }
+
+    @PutMapping("/{bookingId}")
+    public ResponseEntity<BookingDTO> updateBookingStatus(
+            @PathVariable Long bookingId,
+            @RequestParam BookingStatus status
+
+    ) throws Exception {
+
+        Booking booking=bookingService.updateBooking(bookingId,status);
 
         return ResponseEntity.ok(BookingMapper.toDTO(booking));
     }
